@@ -30,8 +30,11 @@ nav a:hover,nav a.on{color:var(--ac);border-color:var(--ac)}
 h2{font-size:28px;text-align:center;margin-bottom:28px}
 section{padding:50px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-.card{background:var(--card);border:1px solid rgba(255,106,0,.55);border-radius:8px;padding:28px 20px;text-align:center;box-shadow:0 0 18px rgba(255,106,0,.16);transition:.25s}
-.card:hover{transform:translateY(-5px);box-shadow:0 0 28px rgba(255,106,0,.38)}
+.card-link{text-decoration:none;color:inherit;display:block}
+.card{background:var(--card);border:1px solid rgba(255,106,0,.55);border-radius:8px;padding:28px 20px;text-align:center;box-shadow:0 0 18px rgba(255,106,0,.16);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;cursor:pointer}
+.card:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(255,106,0,.38);border-color:var(--ac)}
+.card .subtitle{font-size:0.95rem;font-weight:600;margin-top:6px;margin-bottom:8px;color:var(--tx)}
+.card .description{font-size:0.88rem;color:var(--mut);line-height:1.4;margin:0}
 .ico svg{width:52px;height:52px;margin-bottom:12px;filter:drop-shadow(0 0 6px rgba(255,106,0,.55))}
 .card h3{font-size:18px;margin-bottom:6px}.card p{color:var(--mut);font-size:14px}
 .about{max-width:780px;margin:0 auto 30px;text-align:center;color:var(--mut)}
