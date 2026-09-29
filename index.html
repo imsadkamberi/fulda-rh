@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+/* Rende l'intero link della card un blocco pulito senza sottolineature */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* Efekti Zoom In dhe stili për kartelat */
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -47,13 +54,19 @@
 </div></div></div></div>
 <div class="wrap">
 <section><div class="grid">
-<div class="card">
-  <h3 data-i="i.1t">25+ vite përvojë</h3>
-  <p class="subtitle" data-i="i.1sub">Dy dekada e gjysmë duke garantuar sigurinë tuaj në rrugë.</p>
-  <p class="description" data-i="i.1d">Goma nga brandet më të njohura me garanci dhe montim profesional.</p>
-</div>
+
+<!-- Card 1: Cliccabile e senza bug "undefined" -->
+<a href="sherbimet.html" class="card-link">
+  <div class="card">
+    <h3>25+ vite përvojë</h3>
+    <p class="subtitle">Dy dekada e gjysmë duke garantuar sigurinë tuaj në rrugë.</p>
+    <p class="description">Goma nga brandet më të njohura me garanci dhe montim profesional.</p>
+  </div>
+</a>
+
 <div class="card"><h3 data-i="i.2t"></h3><p data-i="i.2d"></p></div>
 <div class="card"><h3 data-i="i.3t"></h3><p data-i="i.3d"></p></div>
+
 </div></section></div>
 </main>
 <script src="app.js"></script>
