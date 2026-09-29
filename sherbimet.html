@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fulda R-H CNC</title>
+<title>Fulda R-H CNC | Shërbimet</title>
 
 <!-- Ikona e rrotës portokalli te tab-i i shfletuesit -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%23ff6a00' stroke-width='10'/><circle cx='50' cy='50' r='10' fill='%23ff6a00'/><g stroke='%23ff6a00' stroke-width='8'><line x1='50' y1='8' x2='50' y2='92'/><line x1='8' y1='50' x2='92' y2='50'/><line x1='20' y1='20' x2='80' y2='80'/><line x1='20' y1='80' x2='80' y2='20'/></g></svg>">
@@ -12,13 +12,179 @@
 </head>
 <body data-page="serv">
 <main>
-<div class="wrap"><section><h2 data-i="s.title"></h2><div class="grid">
-<div class="card"><div class="ico" data-ic="wheel"></div><h3 data-i="s.1t"></h3><p data-i="s.1d"></p></div>
-<div class="card"><div class="ico" data-ic="cnc"></div><h3 data-i="s.2t"></h3><p data-i="s.2d"></p></div>
-<div class="card"><div class="ico" data-ic="tire"></div><h3 data-i="s.3t"></h3><p data-i="s.3d"></p></div>
-<div class="card"><div class="ico" data-ic="rim"></div><h3 data-i="s.4t"></h3><p data-i="s.4d"></p></div>
-</div></section></div>
+<div class="wrap">
+  <section>
+    <h2 data-i="s.title"></h2>
+    <div class="grid">
+      
+      <div class="card">
+        <div class="ico" data-ic="wheel"></div>
+        <h3 data-i="s.1t"></h3>
+        <p data-i="s.1d"></p>
+      </div>
+
+      <!-- Karta 2: Riparimi i Fellgave (E klikueshme me Pop-up Modal) -->
+      <div class="card card-clickable" onclick="openFellgatModal()">
+        <div class="ico" data-ic="cnc"></div>
+        <h3 data-i="s.2t"></h3>
+        <p data-i="s.2d"></p>
+        <span class="btn-more" data-i="s.2btn">Shiko Galerinë ➔</span>
+      </div>
+
+      <div class="card">
+        <div class="ico" data-ic="tire"></div>
+        <h3 data-i="s.3t"></h3>
+        <p data-i="s.3d"></p>
+      </div>
+
+      <div class="card">
+        <div class="ico" data-ic="rim"></div>
+        <h3 data-i="s.4t"></h3>
+        <p data-i="s.4d"></p>
+      </div>
+
+    </div>
+  </section>
+</div>
 </main>
+
+<!-- POP-UP MODAL I GALERISË SË FELLGAVE -->
+<div id="fellgatModal" class="modal-overlay" onclick="closeFellgatModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeFellgatModal(event, true)" data-i="m.close">✖ Mbyll</button>
+    <h2 data-i="m.title">Galeria: Riparim i Fellgave</h2>
+    <p class="modal-desc" data-i="m.desc">Punime profesionale të drejtimit, saldimit, restaurimit me CNC dhe ngjyrosjes së jantave.</p>
+
+    <div class="gallery-grid">
+      
+      <!-- FOTOT -->
+      <div class="gallery-item">
+        <img src="photo1.jpg" alt="Punim CNC" onclick="openMediaLightbox('photo1.jpg', 'image')">
+      </div>
+
+      <div class="gallery-item">
+        <img src="photo2.jpg" alt="Punim CNC" onclick="openMediaLightbox('photo2.jpg', 'image')">
+      </div>
+
+      <div class="gallery-item">
+        <img src="photo3.jpg" alt="Punim CNC" onclick="openMediaLightbox('photo3.jpg', 'image')">
+      </div>
+
+      <div class="gallery-item">
+        <img src="photo4.jpg" alt="Punim CNC" onclick="openMediaLightbox('photo4.jpg', 'image')">
+      </div>
+
+      <!-- VIDEOT -->
+      <div class="gallery-item video-item">
+        <button class="expand-btn" onclick="openMediaLightbox('video1.mp4', 'video')" data-i="m.expand">⤢ Zmadho</button>
+        <video controls preload="metadata" onplay="stopOtherVideos(this)">
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item video-item">
+        <button class="expand-btn" onclick="openMediaLightbox('video2.mp4', 'video')" data-i="m.expand">⤢ Zmadho</button>
+        <video controls preload="metadata" onplay="stopOtherVideos(this)">
+          <source src="video2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item video-item">
+        <button class="expand-btn" onclick="openMediaLightbox('video3.mp4', 'video')" data-i="m.expand">⤢ Zmadho</button>
+        <video controls preload="metadata" onplay="stopOtherVideos(this)">
+          <source src="video3.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item video-item">
+        <button class="expand-btn" onclick="openMediaLightbox('video4.mp4', 'video')" data-i="m.expand">⤢ Zmadho</button>
+        <video controls preload="metadata" onplay="stopOtherVideos(this)">
+          <source src="video4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item video-item">
+        <button class="expand-btn" onclick="openMediaLightbox('video5.mp4', 'video')" data-i="m.expand">⤢ Zmadho</button>
+        <video controls preload="metadata" onplay="stopOtherVideos(this)">
+          <source src="video5.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- DRITARJA PER ZMADHIMIN E FOTOVE DHE VIDEOS (LIGHTBOX) -->
+<div id="lightboxModal" class="lightbox-overlay" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox(event, true)">&times;</span>
+  <img id="lightboxImg" src="" alt="Foto e zmadhuar" style="display:none;">
+  <video id="lightboxVideo" controls style="display:none;"></video>
+</div>
+
 <script src="app.js"></script>
+<script>
+  function openFellgatModal() {
+    document.getElementById('fellgatModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFellgatModal(event, forceClose) {
+    if (forceClose || event.target.classList.contains('modal-overlay')) {
+      document.getElementById('fellgatModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+      stopAllVideos();
+    }
+  }
+
+  function stopOtherVideos(currentVideo) {
+    const allVideos = document.querySelectorAll('video');
+    allVideos.forEach(v => {
+      if (v !== currentVideo) {
+        v.pause();
+      }
+    });
+  }
+
+  function stopAllVideos() {
+    const allVideos = document.querySelectorAll('video');
+    allVideos.forEach(v => {
+      v.pause();
+    });
+  }
+
+  function openMediaLightbox(src, type) {
+    stopAllVideos();
+    
+    const lb = document.getElementById('lightboxModal');
+    const lbImg = document.getElementById('lightboxImg');
+    const lbVid = document.getElementById('lightboxVideo');
+
+    if (type === 'image') {
+      lbVid.style.display = 'none';
+      lbVid.src = '';
+      lbImg.src = src;
+      lbImg.style.display = 'block';
+    } else if (type === 'video') {
+      lbImg.style.display = 'none';
+      lbImg.src = '';
+      lbVid.src = src;
+      lbVid.style.display = 'block';
+      lbVid.play();
+    }
+
+    lb.style.display = 'flex';
+  }
+
+  function closeLightbox(event, forceClose) {
+    if (forceClose || event.target.id === 'lightboxModal' || event.target.classList.contains('lightbox-close')) {
+      const lb = document.getElementById('lightboxModal');
+      const lbVid = document.getElementById('lightboxVideo');
+      
+      lbVid.pause();
+      lbVid.src = '';
+      lb.style.display = 'none';
+    }
+  }
+</script>
 </body>
 </html>

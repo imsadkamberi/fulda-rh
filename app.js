@@ -1,49 +1,266 @@
-const T={
-sq:{"n.home":"Home","n.serv":"Shërbimet","n.about":"Rreth Nesh","n.contact":"Kontakt",
-"h.title":"Fellgat e juaja<br>në duar të sigurta","h.text":"Shërbime profesionale për fellga, goma dhe CNC punime. Siguri në rrugë, çdo ditë.","h.btn":"Shikoni shërbimet",
-"i.1t":"25+ vite përvojë","i.1d":"Përvojë e gjatë në industrinë automobilistike.","i.2t":"Precizion & cilësi","i.2d":"CNC punime të sakta me rezultate të qëndrueshme.","i.3t":"Për çdo automjet","i.3d":"Goma dhe fellga për makina, moto, kamionë dhe traktorë.",
-"m.title":"Lokacioni","s.title":"Çfarë ofrojmë ne?",
-"s.1t":"Riparim i Fellgave","s.1d":"Riparim profesional pa dallime apo dobësi.","s.2t":"CNC + Lyerje","s.2d":"CNC dhe lyerje me profesionalizëm.","s.3t":"Shitje Goma","s.3d":"Për çdo lloj automjeti, moto, kamion, traktor.","s.4t":"Shitje Fellga","s.4d":"Të çdo modeli dhe madhësie.",
-"a.title":"Rreth Kompanisë","a.text":"Fulda-RH është një kompani e specializuar në CNC punime për fellgat, duke ofruar shërbime të avancuara dhe të personalizuara për çdo klient. Me përvojë të gjatë në industrinë automobilistike dhe teknologjinë më moderne, garantojmë precizion, cilësi të lartë dhe rezultate të qëndrueshme.",
-"st.1":"Vite Eksperiencë","st.2":"Goma të Shitura","st.3":"CNC Punime","st.4":"Fellga të Riparuara","c.title":"Kontakti","c.phone":"Telefon","f":"Të gjitha të drejtat e rezervuara."},
-mk:{"n.home":"Почетна","n.serv":"Услуги","n.about":"За нас","n.contact":"Контакт",
-"h.title":"Вашите фелни<br>во сигурни раце","h.text":"Професионални услуги за фелни, гуми и CNC обработка. Безбедност на патот, секој ден.","h.btn":"Погледнете ги услугите",
-"i.1t":"25+ години искуство","i.1d":"Долгогодишно искуство во автомобилската индустрија.","i.2t":"Прецизност и квалитет","i.2d":"Прецизна CNC обработка со стабилни резултати.","i.3t":"За секое возило","i.3d":"Гуми и фелни за автомобили, мотори, камиони и трактори.",
-"m.title":"Локација","s.title":"Што нудиме?",
-"s.1t":"Поправка на фелни","s.1d":"Професионална поправка без разлики или слабости.","s.2t":"CNC + Лакирање","s.2d":"CNC обработка и лакирање со професионалност.","s.3t":"Продажба на гуми","s.3d":"За секој вид возило, мотор, камион, трактор.","s.4t":"Продажба на фелни","s.4d":"За секој модел и големина.",
-"a.title":"За компанијата","a.text":"Fulda-RH е компанија специјализирана за CNC обработка на фелни, која нуди напредни и персонализирани услуги за секој клиент. Со долгогодишно искуство во автомобилската индустрија и најмодерна технологија, гарантираме прецизност, висок квалитет и стабилни резултати.",
-"st.1":"Години искуство","st.2":"Продадени гуми","st.3":"CNC обработки","st.4":"Поправени фелни","c.title":"Контакт","c.phone":"Телефон","f":"Сите права се задржани."},
-en:{"n.home":"Home","n.serv":"Services","n.about":"About Us","n.contact":"Contact",
-"h.title":"Your wheels<br>in safe hands","h.text":"Professional services for rims, tires and CNC work. Safety on the road, every day.","h.btn":"See our services",
-"i.1t":"25+ years of experience","i.1d":"Long experience in the automotive industry.","i.2t":"Precision & quality","i.2d":"Accurate CNC work with consistent results.","i.3t":"For every vehicle","i.3d":"Tires and rims for cars, motorcycles, trucks and tractors.",
-"m.title":"Location","s.title":"What do we offer?",
-"s.1t":"Rim Repair","s.1d":"Professional rim repair with no visible flaws or weak spots.","s.2t":"CNC + Painting","s.2d":"CNC machining and painting done professionally.","s.3t":"Tire Sales","s.3d":"For every vehicle: car, moto, truck, tractor.","s.4t":"Rim Sales","s.4d":"For every model and size.",
-"a.title":"About the Company","a.text":"Fulda-RH is a company specialised in CNC machining of rims, offering advanced and personalised services for every client. With long experience in the automotive industry and modern technology, we guarantee precision, high quality and consistent results.",
-"st.1":"Years of Experience","st.2":"Tires Sold","st.3":"CNC Jobs","st.4":"Rims Repaired","c.title":"Contact","c.phone":"Phone","f":"All rights reserved."}};
-const P='fill="none" stroke="#ff6a00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"';
-const IC={
-wheel:`<svg viewBox="0 0 48 48" ${P}><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="4"/><path d="M24 6v14M24 28v14M6 24h14M28 24h14M11 11l10 10M27 27l10 10M37 11L27 21M21 27L11 37"/></svg>`,
-cnc:`<svg viewBox="0 0 48 48" ${P}><rect x="6" y="5" width="36" height="6" rx="2"/><rect x="17" y="11" width="14" height="8" rx="1.5"/><path d="M24 19v7M21 26h6l-3 5zM24 35v7M16 34l-5 7M32 34l5 7M9 30l-4 3M39 30l4 3"/></svg>`,
-tire:`<svg viewBox="0 0 48 48" ${P}><rect x="8" y="8" width="32" height="9" rx="4"/><rect x="8" y="19" width="32" height="9" rx="4"/><rect x="8" y="30" width="32" height="9" rx="4"/></svg>`,
-rim:`<svg viewBox="0 0 48 48" ${P}><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="11"/><path d="M24 13v22M13 24h22M16 16l16 16M32 16L16 32"/></svg>`};
-const pages=[['home','index.html','n.home'],['serv','sherbimet.html','n.serv'],['about','rreth-nesh.html','n.about'],['contact','kontakt.html','n.contact']];
-const cur=document.body.dataset.page,S=localStorage;
-let lang=S.getItem('fl')||'sq',theme=S.getItem('ft')||'dark';
-const logo=`<a class="logo" href="index.html"><svg viewBox="0 0 40 40" fill="none" stroke="#ff6a00" stroke-width="3" stroke-linecap="round"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="4.5"/><path d="M20 4v11.5M20 24.5V36M4 20h11.5M24.5 20H36M9 9l8 8M23 23l8 8M31 9l-8 8M17 23l-8 8" stroke-width="2"/></svg><span>FULDA <b>R-H</b> CNC</span></a>`;
-document.body.insertAdjacentHTML('afterbegin',`<header><div class="bar">${logo}<nav id="nv">${pages.map(p=>`<a href="${p[1]}" data-i="${p[2]}" class="${p[0]==cur?'on':''}"></a>`).join('')}</nav><div class="ctl">${['sq','mk','en'].map(l=>`<button data-l="${l}">${l=='mk'?'МК':l.toUpperCase()}</button>`).join('')}<button id="th" title="Dark / Light"></button><button id="bg">☰</button></div></div></header>`);
-document.body.insertAdjacentHTML('beforeend','<footer>© 2026 Fulda R-H. <span data-i="f"></span></footer>');
-document.querySelectorAll('[data-ic]').forEach(e=>e.innerHTML=IC[e.dataset.ic]);
-function apply(){
- const d=T[lang];
- document.querySelectorAll('[data-i]').forEach(e=>e.innerHTML=d[e.dataset.i]);
- document.querySelectorAll('[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l==lang));
- document.documentElement.lang=lang;
- document.documentElement.dataset.theme=theme;
- document.getElementById('th').textContent=theme=='dark'?'☀️':'🌙';
- const pg=pages.find(p=>p[0]==cur);
- document.title=d[pg[2]]+' | Fulda R-H CNC';
+/* ========================================================= */
+/* Fjalori i plotë i përkthimeve për të gjitha faqet (SQ, MK, EN) */
+/* ========================================================= */
+const dict = {
+  sq: {
+    // Navigimi
+    "nav.home": "Home",
+    "nav.serv": "Shërbimet",
+    "nav.about": "Rreth Nesh",
+    "nav.contact": "Kontakt",
+
+    // Home (index.html)
+    "h.title": "RESTAURIM I FELLGAVE ME CNC & LYERJE ME PLUHUR",
+    "h.text": "Shërbime profesionale për të gjitha llojet e fellgave, gomat dhe servisimin e tyre me teknologjinë më të fundit.",
+    "h.btn": "Të gjitha Shërbimet",
+    "i.1t": "Montim & Balancim",
+    "i.1d": "Montim dhe balancim kompjuterik me saktësi maksimale për çdo lloj automjeti.",
+    "i.2t": "Riparim i Fellgave",
+    "i.2d": "Drejtim, saldim, restaurim me CNC dhe lyerje elektrostatike pa asnjë dallim.",
+    "i.3t": "Goma Të Reja & Të Përdorura",
+    "i.3d": "Shitje dhe ndërrim gomasht për çdo sezon, model dhe madhësi.",
+
+    // Shërbimet (sherbimet.html)
+    "s.title": "Çfarë ofrojmë ne?",
+    "s.1t": "Drejtim & Saldim",
+    "s.1d": "Drejtim profesional i fellgave pa dëmtime apo dobësi.",
+    "s.2t": "CNC + Lyerje",
+    "s.2d": "CNC dhe lyerje me profesionalizmë.",
+    "s.2btn": "Shiko Galerinë ➔",
+    "s.3t": "Shitje Goma",
+    "s.3d": "Për çdo lloj automjeti, moto, kamion, traktor.",
+    "s.4t": "Shitje Fellga",
+    "s.4d": "Të çdo modeli dhe madhësie.",
+
+    // Pop-up Modal (Galeria)
+    "m.close": "✖ Mbyll",
+    "m.title": "Galeria: Riparim i Fellgave",
+    "m.desc": "Punime profesionale të drejtimit, saldimit, restaurimit me CNC dhe ngjyrosjes së jantave.",
+    "m.expand": "⤢ Zmadho",
+
+    // Rreth Nesh (rreth-nesh.html)
+    "a.title": "Rreth Kompanisë",
+    "a.desc": "Fulda-RH është një kompani e specializuar në CNC punime për fellgat, duke ofruar shërbime të avancuara dhe të personalizuara për çdo klient. Me përvojë të gjatë në industrinë automobilistike dhe teknologjinë më moderne, garantojmë precizion, cilësi të lartë dhe rezultate të qëndrueshme.",
+    "a.s1": "Vite Eksperiencë",
+    "a.s2": "Goma të Shitura",
+    "a.s3": "CNC Punime",
+    "a.s4": "Fellga të Riparuara",
+
+    // Kontakt (kontakt.html)
+    "c.title": "Na Kontaktoni",
+    "c.desc": "Na vizitoni në punishtën tonë ose na telefononi për çdo pyetje apo rezervim.",
+    "c.phone": "Telefoni",
+    "c.loc": "Lokacioni",
+    "c.hours": "Orare të Punës"
+  },
+
+  mk: {
+    // Navigimi
+    "nav.home": "Почетна",
+    "nav.serv": "Услуги",
+    "nav.about": "За нас",
+    "nav.contact": "Контакт",
+
+    // Home
+    "h.title": "СНС РЕСТАВРАЦИЈА НА ФЕЛНИ & ЛАКИРАЊЕ СО ПРАВ",
+    "h.text": "Професионални услуги за сите видови фелни, гуми и нивно сервисирање со најнова технологија.",
+    "h.btn": "Сите Услуги",
+    "i.1t": "Монтажа & Балансирање",
+    "i.1d": "Компјутерска монтажа и балансирање со максимална прецизност за секое возило.",
+    "i.2t": "Поправка на фелни",
+    "i.2d": "Исправање, заварување, CNC реставрација и лакирање со прав без никаква разлика.",
+    "i.3t": "Нови & Половни гуми",
+    "i.3d": "Продажба и замена на гуми за секоја сезона, модел и големина.",
+
+    // Shërbimet
+    "s.title": "Што нудиме?",
+    "s.1t": "Исправање & Заварување",
+    "s.1d": "Професионално исправање на фелни без оштетувања.",
+    "s.2t": "CNC + Лакирање",
+    "s.2d": "CNC обработка и лакирање со професионалност.",
+    "s.2btn": "Погледни галерија ➔",
+    "s.3t": "Продажба на гуми",
+    "s.3d": "За секој вид возило, мотор, камион, трактор.",
+    "s.4t": "Продажба на фелни",
+    "s.4d": "За секој модел и големина.",
+
+    // Modal
+    "m.close": "✖ Затвори",
+    "m.title": "Галерија: Поправка на фелни",
+    "m.desc": "Професионална изработка на исправање, заварување, CNC реставрација и лакирање на фелни.",
+    "m.expand": "⤢ Зголеми",
+
+    // Rreth Nesh
+    "a.title": "За компанијата",
+    "a.desc": "Fulda-RH е компанија специјализирана за CNC работи на фелни, нудејќи напредни и персонализирани услуги за секој клиент. Со долгогодишно искуство во автомобилската индустрија и најмодерна технологија, гарантираме прецизност, висок квалитет и долготрајни резултати.",
+    "a.s1": "Години искуство",
+    "a.s2": "Продадени гуми",
+    "a.s3": "CNC Изработки",
+    "a.s4": "Поправени фелни",
+
+    // Kontakt
+    "c.title": "Контактирајте нè",
+    "c.desc": "Посетете нè во нашата работилница или јавете ни се за какви било прашања или резервации.",
+    "c.phone": "Телефон",
+    "c.loc": "Локација",
+    "c.hours": "Работно време"
+  },
+
+  en: {
+    // Navigimi
+    "nav.home": "Home",
+    "nav.serv": "Services",
+    "nav.about": "About Us",
+    "nav.contact": "Contact",
+
+    // Home
+    "h.title": "CNC RIM RESTORATION & POWDER COATING",
+    "h.text": "Professional services for all types of rims, tires, and servicing with state-of-the-art technology.",
+    "h.btn": "All Services",
+    "i.1t": "Mounting & Balancing",
+    "i.1d": "Computerized mounting and balancing with maximum accuracy for any vehicle.",
+    "i.2t": "Rim Repair",
+    "i.2d": "Straightening, welding, CNC restoration, and powder coating without compromise.",
+    "i.3t": "New & Used Tires",
+    "i.3d": "Sales and replacement of tires for every season, model, and size.",
+
+    // Shërbimet
+    "s.title": "What We Offer?",
+    "s.1t": "Straightening & Welding",
+    "s.1d": "Professional rim straightening without weakness.",
+    "s.2t": "CNC + Painting",
+    "s.2d": "CNC machining and painting with high precision.",
+    "s.2btn": "View Gallery ➔",
+    "s.3t": "Tire Sales",
+    "s.3d": "For all vehicle types, motorcycle, truck, tractor.",
+    "s.4t": "Rim Sales",
+    "s.4d": "For every model and size.",
+
+    // Modal
+    "m.close": "✖ Close",
+    "m.title": "Gallery: Rim Repair",
+    "m.desc": "Professional rim straightening, welding, CNC restoration, and painting.",
+    "m.expand": "⤢ Expand",
+
+    // Rreth Nesh
+    "a.title": "About the Company",
+    "a.desc": "Fulda-RH is a company specialized in CNC work for rims, offering advanced and customized services for every client. With long experience in the automotive industry and state-of-the-art technology, we guarantee precision, high quality, and durable results.",
+    "a.s1": "Years of Experience",
+    "a.s2": "Tires Sold",
+    "a.s3": "CNC Works",
+    "a.s4": "Repaired Rims",
+
+    // Kontakt
+    "c.title": "Contact Us",
+    "c.desc": "Visit our workshop or call us for any inquiries or appointments.",
+    "c.phone": "Phone",
+    "c.loc": "Location",
+    "c.hours": "Working Hours"
+  }
+};
+
+/* Ikonat SVG */
+const icons = {
+  wheel: `<svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>`,
+  cnc: `<svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><path d="M6 3h12v4H6zM12 7v4M8 11h8v3H8zM10 14v4M7 18h10v3H7z"/></svg>`,
+  tire: `<svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M5 7h14M5 12h14M5 17h14"/></svg>`,
+  rim: `<svg viewBox="0 0 24 24" fill="none" stroke="var(--ac)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>`
+};
+
+/* Renderimi i Header-it */
+function renderHeader() {
+  if (document.querySelector('header')) return;
+  
+  const page = document.body.getAttribute('data-page') || 'home';
+  const headerHTML = `
+  <header>
+    <div class="bar">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="42" stroke="var(--ac)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="10" fill="var(--ac)"/>
+          <g stroke="var(--ac)" stroke-width="6">
+            <line x1="50" y1="8" x2="50" y2="92"/>
+            <line x1="8" y1="50" x2="92" y2="50"/>
+            <line x1="20" y1="20" x2="80" y2="80"/>
+            <line x1="20" y1="80" x2="80" y2="20"/>
+          </g>
+        </svg>
+        <span>FULDA <b>R-H CNC</b></span>
+      </a>
+      <button id="bg" onclick="toggleMenu()">☰</button>
+      <nav id="nav">
+        <a href="index.html" class="${page === 'home' ? 'on' : ''}" data-i="nav.home">Home</a>
+        <a href="sherbimet.html" class="${page === 'serv' ? 'on' : ''}" data-i="nav.serv">Shërbimet</a>
+        <a href="rreth-nesh.html" class="${page === 'about' ? 'on' : ''}" data-i="nav.about">Rreth Nesh</a>
+        <a href="kontakt.html" class="${page === 'contact' ? 'on' : ''}" data-i="nav.contact">Kontakt</a>
+      </nav>
+      <div class="ctl">
+        <button id="btn-sq" onclick="setLang('sq')">SQ</button>
+        <button id="btn-mk" onclick="setLang('mk')">MK</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button onclick="toggleTheme()" id="theme-btn">☀️️</button>
+      </div>
+    </div>
+  </header>
+  `;
+  document.body.insertAdjacentHTML('afterbegin', headerHTML);
 }
-document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{lang=b.dataset.l;S.setItem('fl',lang);apply()});
-document.getElementById('th').onclick=()=>{theme=theme=='dark'?'light':'dark';S.setItem('ft',theme);apply()};
-document.getElementById('bg').onclick=()=>document.getElementById('nv').classList.toggle('open');
-apply();
+
+/* Renderimi i ikonave */
+function renderIcons() {
+  document.querySelectorAll('.ico[data-ic]').forEach(el => {
+    const key = el.getAttribute('data-ic');
+    if (icons[key]) el.innerHTML = icons[key];
+  });
+}
+
+function toggleMenu() {
+  const nav = document.getElementById('nav');
+  if (nav) nav.classList.toggle('open');
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('pref_theme', next);
+  updateThemeBtn(next);
+}
+
+function updateThemeBtn(theme) {
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+
+/* Aplikimi i gjuhës */
+function applyLang(lang) {
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const key = el.getAttribute('data-i');
+    if (dict[lang] && dict[lang][key]) {
+      el.textContent = dict[lang][key];
+    }
+  });
+  localStorage.setItem('pref_lang', lang);
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  ['sq', 'mk', 'en'].forEach(l => {
+    const btn = document.getElementById(`btn-${l}`);
+    if (btn) btn.classList.toggle('on', l === lang);
+  });
+}
+
+/* Ekzekutimi në ngarkim */
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  renderIcons();
+
+  const savedTheme = localStorage.getItem('pref_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeBtn(savedTheme);
+
+  const savedLang = localStorage.getItem('pref_lang') || 'sq';
+  setLang(savedLang);
+});
