@@ -51,7 +51,10 @@ const dict = {
     "c.desc": "Na vizitoni në punishtën tonë ose na telefononi për çdo pyetje apo rezervim.",
     "c.phone": "Telefoni",
     "c.loc": "Lokacioni",
-    "c.hours": "Orare të Punës"
+    "c.hours": "Orare të Punës",
+
+    // Footer
+    "f.copy": "© 2026 Fulda RH – Të gjitha të drejtat e rezervuara."
   },
 
   mk: {
@@ -103,7 +106,10 @@ const dict = {
     "c.desc": "Посетете нè во нашата работилница или јавете ни се за какви било прашања или резервации.",
     "c.phone": "Телефон",
     "c.loc": "Локација",
-    "c.hours": "Работно време"
+    "c.hours": "Работно време",
+
+    // Footer
+    "f.copy": "© 2026 Fulda RH – Сите права се задржани."
   },
 
   en: {
@@ -155,7 +161,10 @@ const dict = {
     "c.desc": "Visit our workshop or call us for any inquiries or appointments.",
     "c.phone": "Phone",
     "c.loc": "Location",
-    "c.hours": "Working Hours"
+    "c.hours": "Working Hours",
+
+    // Footer
+    "f.copy": "© 2026 Fulda RH – All rights reserved."
   }
 };
 
@@ -207,6 +216,17 @@ function renderHeader() {
   document.body.insertAdjacentHTML('afterbegin', headerHTML);
 }
 
+/* Renderimi automatik i Footer-it */
+function renderFooter() {
+  if (document.querySelector('footer')) return;
+  const footerHTML = `
+  <footer>
+    <p data-i="f.copy">© 2026 Fulda RH – Të gjitha të drejtat e rezervuara.</p>
+  </footer>
+  `;
+  document.body.insertAdjacentHTML('beforeend', footerHTML);
+}
+
 function renderIcons() {
   document.querySelectorAll('.ico[data-ic]').forEach(el => {
     const key = el.getAttribute('data-ic');
@@ -250,9 +270,10 @@ function setLang(lang) {
   });
 }
 
-/* Ekzekutimi i sigurt në çdo rast */
+/* Ekzekutimi i sigurt në çdo faqe */
 function initApp() {
   renderHeader();
+  renderFooter();
   renderIcons();
 
   const savedTheme = localStorage.getItem('pref_theme') || 'dark';
