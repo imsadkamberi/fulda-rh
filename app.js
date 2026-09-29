@@ -199,7 +199,7 @@ function renderHeader() {
         <button id="btn-sq" onclick="setLang('sq')">SQ</button>
         <button id="btn-mk" onclick="setLang('mk')">MK</button>
         <button id="btn-en" onclick="setLang('en')">EN</button>
-        <button onclick="toggleTheme()" id="theme-btn">☀️️</button>
+        <button onclick="toggleTheme()" id="theme-btn">☀️</button>
       </div>
     </div>
   </header>
@@ -207,7 +207,6 @@ function renderHeader() {
   document.body.insertAdjacentHTML('afterbegin', headerHTML);
 }
 
-/* Renderimi i ikonave */
 function renderIcons() {
   document.querySelectorAll('.ico[data-ic]').forEach(el => {
     const key = el.getAttribute('data-ic');
@@ -233,7 +232,6 @@ function updateThemeBtn(theme) {
   if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
 }
 
-/* Aplikimi i gjuhës */
 function applyLang(lang) {
   document.querySelectorAll('[data-i]').forEach(el => {
     const key = el.getAttribute('data-i');
@@ -252,8 +250,8 @@ function setLang(lang) {
   });
 }
 
-/* Ekzekutimi në ngarkim */
-document.addEventListener('DOMContentLoaded', () => {
+/* Ekzekutimi i sigurt në çdo rast */
+function initApp() {
   renderHeader();
   renderIcons();
 
@@ -263,4 +261,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const savedLang = localStorage.getItem('pref_lang') || 'sq';
   setLang(savedLang);
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
