@@ -9,6 +9,35 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='none' stroke='%23ff6a00' stroke-width='10'/><circle cx='50' cy='50' r='10' fill='%23ff6a00'/><g stroke='%23ff6a00' stroke-width='8'><line x1='50' y1='8' x2='50' y2='92'/><line x1='8' y1='50' x2='92' y2='50'/><line x1='20' y1='20' x2='80' y2='80'/><line x1='20' y1='80' x2='80' y2='20'/></g></svg>">
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* Efekti Zoom In dhe stili për kartelat */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Zoom In me 5% */
+  box-shadow: 0 10px 25px rgba(255, 106, 0, 0.25); /* Hije e lehtë portokalli */
+  border-color: #ff6a00;
+}
+
+.card .subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  color: #e0e0e0;
+}
+
+.card .description {
+  font-size: 0.88rem;
+  color: #b0b0b0;
+  line-height: 1.4;
+  margin: 0;
+}
+</style>
 </head>
 <body data-page="home">
 <main>
@@ -18,7 +47,11 @@
 </div></div></div></div>
 <div class="wrap">
 <section><div class="grid">
-<div class="card"><h3 data-i="i.1t"></h3><p data-i="i.1d"></p></div>
+<div class="card">
+  <h3 data-i="i.1t">25+ vite përvojë</h3>
+  <p class="subtitle" data-i="i.1sub">Dy dekada e gjysmë duke garantuar sigurinë tuaj në rrugë.</p>
+  <p class="description" data-i="i.1d">Goma nga brandet më të njohura me garanci dhe montim profesional.</p>
+</div>
 <div class="card"><h3 data-i="i.2t"></h3><p data-i="i.2d"></p></div>
 <div class="card"><h3 data-i="i.3t"></h3><p data-i="i.3d"></p></div>
 </div></section></div>
